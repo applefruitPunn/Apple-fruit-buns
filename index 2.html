@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="sheet">
+    <header class="sheet__header">
+      <h1 class="sheet__title">Task Assistant</h1>
+      <span class="sheet__meta" id="task-count">no open tasks</span>
+    </header>
+
+    <div class="log" id="log" role="log" aria-live="polite"></div>
+
+    <form class="composer" id="composer">
+      <input
+        id="input"
+        type="text"
+        autocomplete="off"
+        placeholder="add buy milk, list, calc 12*4, help…"
+        aria-label="Message"
+      />
+      <button type="submit">send</button>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

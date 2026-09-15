@@ -1,0 +1,68 @@
+[
+  {
+    "id": "greeting",
+    "keywords": ["hello", "hi", "hey", "yo", "morning"],
+    "responses": [
+      "Hey. What are we getting done today?",
+      "Hi there \u2014 tell me what you're working on.",
+      "Hello! Type \"help\" if you want to see what I can do."
+    ]
+  },
+  {
+    "id": "thanks",
+    "keywords": ["thanks", "thank you", "cheers", "appreciate"],
+    "responses": [
+      "Anytime.",
+      "You've got it.",
+      "That's what I'm here for."
+    ]
+  },
+  {
+    "id": "how-are-you",
+    "keywords": ["how are you", "how's it going", "you doing"],
+    "responses": [
+      "Running fine and ready to help. What's on your list?",
+      "No complaints \u2014 what do you need?"
+    ]
+  },
+  {
+    "id": "bored",
+    "keywords": ["bored", "procrastinating", "stuck", "unmotivated"],
+    "responses": [
+      "Pick the smallest task on your list and do just that one. Momentum does the rest.",
+      "Try \"list tasks\" \u2014 sometimes seeing it written down is enough to get moving."
+    ]
+  },
+  {
+    "id": "joke",
+    "keywords": ["joke", "funny", "make me laugh"],
+    "responses": [
+      "Why do programmers prefer dark mode? Because light attracts bugs.",
+      "I'd tell you a UDP joke, but you might not get it."
+    ]
+  },
+  {
+    "id": "identity",
+    "keywords": ["who are you", "what are you", "your name"],
+    "responses": [
+      "I'm a small task assistant built from plain keyword rules \u2014 no external AI, just this page.",
+      "Just a rule-based helper living entirely in this browser tab."
+    ]
+  },
+  {
+    "id": "bye",
+    "keywords": ["bye", "goodbye", "see you", "later"],
+    "responses": [
+      "See you \u2014 your tasks will still be here when you're back.",
+      "Bye! I'll keep your list saved for next time."
+    ]
+  },
+  {
+    "id": "praise",
+    "keywords": ["good job", "well done", "nice work", "good bot"],
+    "responses": [
+      "Appreciated. Back to it?",
+      "Thanks \u2014 what's next on the list?"
+    ]
+  }
+]

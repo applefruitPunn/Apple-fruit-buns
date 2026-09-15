@@ -1,0 +1,168 @@
+:root {
+  --paper: #f2efe4;
+  --paper-line: #d9d3bd;
+  --ink: #24301f;
+  --ink-soft: #5b6350;
+  --moss: #4c6b52;
+  --moss-deep: #33482f;
+  --clay: #9a6a3c;
+  --user-bg: #e6ddc4;
+  --assistant-bg: #ffffff;
+  --radius: 3px;
+  font-size: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent, transparent 27px,
+    var(--paper-line) 28px
+  );
+  color: var(--ink);
+  font-family: "Iowan Old Style", "Georgia", "Charter", serif;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px;
+  min-height: 100%;
+}
+
+.sheet {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px);
+}
+
+.sheet__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+}
+
+.sheet__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin: 0;
+}
+
+.sheet__meta {
+  font-family: "Menlo", "Consolas", monospace;
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+}
+
+.log {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.line {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  animation: settle 160ms ease-out;
+}
+
+@keyframes settle {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.line__tag {
+  flex: 0 0 auto;
+  width: 64px;
+  text-align: right;
+  font-family: "Menlo", "Consolas", monospace;
+  font-size: 0.68rem;
+  text-transform: lowercase;
+  color: var(--ink-soft);
+  padding-top: 3px;
+}
+
+.line--user .line__tag { color: var(--clay); }
+.line--assistant .line__tag { color: var(--moss-deep); }
+
+.line__body {
+  white-space: pre-wrap;
+  line-height: 1.5;
+  padding: 6px 10px;
+  border-radius: var(--radius);
+}
+
+.line--user .line__body {
+  background: var(--user-bg);
+}
+
+.line--assistant .line__body {
+  background: var(--assistant-bg);
+  border: 1px solid var(--paper-line);
+}
+
+.composer {
+  display: flex;
+  gap: 8px;
+  border-top: 2px solid var(--ink);
+  padding-top: 12px;
+}
+
+.composer input {
+  flex: 1;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--assistant-bg);
+  border: 1px solid var(--paper-line);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+
+.composer input:focus {
+  outline: 2px solid var(--moss);
+  outline-offset: 1px;
+}
+
+.composer button {
+  font-family: "Menlo", "Consolas", monospace;
+  font-size: 0.85rem;
+  background: var(--moss-deep);
+  color: var(--paper);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0 18px;
+  cursor: pointer;
+}
+
+.composer button:hover {
+  background: var(--moss);
+}
+
+.composer button:focus-visible,
+.composer input:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line { animation: none; }
+}
+
+@media (max-width: 480px) {
+  .line__tag { width: 48px; }
+}
